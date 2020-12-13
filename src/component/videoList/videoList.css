@@ -1,0 +1,6 @@
+@import '/src/reset.css';
+
+.videoList {
+  display: flex;
+  flex-wrap: wrap;
+}

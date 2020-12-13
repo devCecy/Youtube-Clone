@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import './video.css'
 
-class Video extends Component {
-
+class Videos extends Component {
   render() {
+    const {title,channelTitle,thumbnails} = this.props.video.snippet
     return (
-      <>
-        {this.props.videos.map(video => {
-          return ( 
-            <div className="videoBox">
-            <img src={video.snippet.thumbnails.default.url}/>
-            <span className="videoTitle"
-            onClick={this.props.goToDetail}
-            >{video.snippet.title}</span>
-          </div>
-          )
-        })}
-        </>
+      <li className="videoBox">
+              <img 
+              className="thumbnails"
+            src={thumbnails.medium.url}
+            alt="video thumbnail"
+            />
+            <div>
+              <p 
+              className="Title"
+              onClick={this.props.goToDetail}
+              >{title}</p>
+              <p
+              className="channelTitle"
+              >{channelTitle}</p>
+            </div>
+      </li>
     );
   }
 }
 
-export default Video;
+export default Videos;

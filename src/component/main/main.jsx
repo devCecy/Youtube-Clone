@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './main.css'
 import Header from '../header/header';
-import Video  from '../video/video';
+import VideoList  from '../videoList/videoList';
+
 
 class Main extends Component {
   state = {
@@ -44,9 +45,9 @@ class Main extends Component {
       <div>
         <Header
         handleChange={this.handleChange}/>
-        <Video 
+        <VideoList 
         videos={filterVideo}
-        goToDetail={this.handleGoToDetail}
+        handleGoToDetail={this.handleGoToDetail}
         />
       </div>
     );

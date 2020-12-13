@@ -29,18 +29,13 @@ class Main extends Component {
   handleGoToDetail = () => {
   this.props.history.push('/detail')
   }
-
-  // handleSearch = () => {
-  //   const filterVideo = this.state.videos.filter((video) => {
-  //   return video.snippet.title.toLowerCase().includes(this.state.userInput.toLowerCase());
-  //   });
-  // }
-
+  
   render() {
-    
+    // console.log(this.state.videos)
       const filterVideo = this.state.videos.filter((video) => {
       return video.snippet.title.toLowerCase().includes(this.state.userInput.toLowerCase());
     });
+
     return (
       <div>
         <Header

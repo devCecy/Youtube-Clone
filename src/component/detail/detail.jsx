@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
-import Header from '../header/header';
-import VideoList from '../videoList/videoList';
 
 class Detail extends Component {
-  state = {
-    videos: [],
-    userInput: ""
-  };
-
-  componentDidMount = () => {
-    fetch ("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=쇼미더머니&key=AIzaSyCzoAtSVR9qKWwSkT6jRk7COEdxWrOOSEo")
-    .then(response => response.json())
-    .then(response =>{
-      this.setState({
-        videos : response.items
-      })
-    })
-  }
-
   render() {
-    const filterVideo = this.state.videos.filter((video) => {
-      return video.snippet.title.toLowerCase().includes(this.state.userInput.toLowerCase());
-    });
+    // console.log(this.props.video.id.videoId)
     return (
       <>
-      <Header />
-      <p>영상과 디테일이 필요해요 </p>
-      <VideoList 
-        videos={filterVideo}/>
+        <iframe 
+        className="videos"
+        type="text/html" 
+        width="100%" 
+        height="500px"
+        src={`https://www.youtube.com/embed/${this.props.video.id.videoId}`}
+        frameBorder="0" 
+        allowfullScreen
+        ></iframe>
+        <h2>{this.props.video.snippet.title}</h2>
+        <h3>{this.props.video.snippet.channelTitle}</h3>
+        <pre>{this.props.video.snippet.description}</pre>
+        {/* <img
+        className="detailThumnaile"
+        alt="detailThumnaile"
+        src= {this.props.video.thumbnails.medium.url}
+        />
+        <h1 className="detailBox"> */}
+          {/* {this.props.video.title} */}
+        {/* </h1> */}
       </>
     );
   }

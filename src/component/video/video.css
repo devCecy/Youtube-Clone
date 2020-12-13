@@ -3,8 +3,8 @@
 .videoBox {
   display: flex;
   align-items: center;
-  width: 49%;
-  margin: 0.2em;
+  width: 650px;
+  margin-bottom: 0.2em;
   box-shadow: 6px 7px 21px -8px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 6px 7px 21px -8px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 7px 21px -8px rgba(0, 0, 0, 0.75);

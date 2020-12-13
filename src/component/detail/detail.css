@@ -1,1 +1,5 @@
 @import '/src/reset.css';
+
+.detailBox {
+  margin-left: 40px;
+}

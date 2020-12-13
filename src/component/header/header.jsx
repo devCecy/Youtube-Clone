@@ -1,29 +1,23 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import './header.css'
 
 class Header extends Component {
-  // inputRef = React.createRef();
+  // inputRef = createRef();
 
-  // onKeyPress =(event) => {
-  //   if(event.key === 'Enter'){
-  //     console.log("엔터")
-    
-  //   }
+  
+  // handleSearch =()=> {
+  //   const name = this.inputRef.current.value;
+  //   onSearch(name);
   // }
 
-  // handleSearch = () => {
-  //   const name = this.inputRef.current.name
-  //   console.log(name)
-  // }
   render() {
     return (
     <header className="header">
       <img  className="youtubeLogo" alt="youtubeLogo" src ="/images/YoutubeLogo.png"/>
       <input 
-        // ref={this.inputRef}
+        ref={this.inputRef}
         className="searchBar" 
         placeholder="Search..."
-        // onKeyPress={this.onKeyPress}
         onChange={this.props.handleChange}
         />
       <button 

@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import './video.css'
 
 class Videos extends Component {
+  onVideoClick = () => {
+    const video = this.props.video
+    this.props.onVideoClick(video)
+  }
   render() {
     const {title,channelTitle,thumbnails} = this.props.video.snippet
     return (
-      <li className="videoBox">
+      <li 
+      className="videoBox"
+      onClick={this.onVideoClick}
+      >
               <img 
               className="thumbnails"
             src={thumbnails.medium.url}
@@ -14,7 +21,6 @@ class Videos extends Component {
             <div>
               <p 
               className="Title"
-              onClick={this.props.goToDetail}
               >{title}</p>
               <p
               className="channelTitle"

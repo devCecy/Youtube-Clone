@@ -1,0 +1,27 @@
+.detailContainer {
+  /* width: 80rem; */
+  display: flex;
+  align-items: initial;
+}
+
+.videoDetail {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  /* flex: 1 1 40%; */
+  margin-top: 15px;
+  margin-left: 100px;
+}
+
+.sideVideoList {
+  /* flex: 1 1 30%; */
+  margin-right: 100px;
+  padding-top: 0;
+}
+
+/*반응형*/
+@media screen and (max-width: 48rem) {
+  .detailContainer {
+    flex-direction: column;
+  }
+}

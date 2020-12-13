@@ -12,7 +12,8 @@ class VideoList extends Component {
             <Video 
             key={video.id}
             video={video}
-            goToDetail={this.props.handleGoToDetail} />
+            onVideoClick={this.props.onVideoClick}
+            />
           )
         })}
         </ul>
